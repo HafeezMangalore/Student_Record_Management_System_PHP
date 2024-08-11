@@ -1,0 +1,124 @@
+/* Base styles for timeline */
+.timeline {
+    position: relative;
+    padding: 20px 0 20px;
+    list-style: none;
+}
+
+.timeline:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    margin-left: -1.5px;
+    background-color: #eeeeee;
+}
+
+.timeline > li {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline > li:before,
+.timeline > li:after {
+    content: " ";
+    display: table;
+}
+
+.timeline > li:after {
+    clear: both;
+}
+
+/* Panel for each timeline item */
+.timeline > li > .timeline-panel {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.175);
+    margin-bottom: 20px;
+}
+
+/* Badge for each timeline item */
+.timeline > li > .timeline-badge {
+    position: absolute;
+    top: 16px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.4em;
+    line-height: 50px;
+    color: #fff;
+}
+
+/* Adjustments for small screens */
+@media(max-width:767px) {
+    .timeline:before {
+        left: 40px;
+    }
+
+    .timeline > li > .timeline-panel {
+        width: calc(100% - 90px);
+    }
+
+    .timeline > li > .timeline-badge {
+        top: 16px;
+        left: 15px;
+    }
+}
+
+/* Adjustments for medium screens */
+@media(min-width:768px) and (max-width:991px) {
+    .timeline:before {
+        left: 60px;
+    }
+
+    .timeline > li > .timeline-panel {
+        width: calc(100% - 120px);
+    }
+
+    .timeline > li > .timeline-badge {
+        top: 16px;
+        left: 30px;
+    }
+}
+
+/* Adjustments for large screens */
+@media(min-width:992px) {
+    .timeline:before {
+        left: 80px;
+    }
+
+    .timeline > li > .timeline-panel {
+        width: calc(50% - 90px);
+    }
+
+    .timeline > li > .timeline-badge {
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline > li.timeline-inverted > .timeline-panel {
+        float: left;
+    }
+
+    .timeline > li.timeline-inverted > .timeline-panel:before {
+        right: auto;
+        left: -15px;
+        border-right-width: 15px;
+        border-left-width: 0;
+    }
+
+    .timeline > li.timeline-inverted > .timeline-panel:after {
+        right: auto;
+        left: -14px;
+        border-right-width: 14px;
+        border-left-width: 0;
+    }
+}
+
